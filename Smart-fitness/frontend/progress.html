@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress | Smart Tracker Booster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body progress-body">
+    <header class="dashboard-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand"><span class="brand-mark">ST</span><span>SmartTracker</span></a>
+            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <button class="login-link logout-button" type="button" id="logoutButton">Logout</button>
+                <a href="dashboard.html" class="btn btn-light">Dashboard</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-page progress-page" id="progressPage">
+        <section class="progress-shell">
+            <section class="dashboard-hero progress-hero reveal">
+                <div>
+                    <p class="eyebrow">User progress</p>
+                    <h1><span id="progressUserName">Athlete</span>'s progress center</h1>
+                    <p id="progressIntro">Track your weekly improvements, review your routine, and send direct feedback to your coach from one place.</p>
+                    <div class="hero-actions dashboard-hero-actions">
+                        <a href="dashboard.html" class="btn btn-primary">Back to dashboard</a>
+                    </div>
+                </div>
+                <div class="progress-highlight-card">
+                    <span>Current streak</span>
+                    <strong id="progressStreakValue">0 days</strong>
+                    <small id="progressCoachLine">Coach note ready after your next update</small>
+                </div>
+            </section>
+
+            <section class="progress-summary-grid reveal">
+                <article class="dash-stat-card">
+                    <span class="dash-icon">GO</span>
+                    <p>Goal completion</p>
+                    <strong id="progressGoalValue">0%</strong>
+                    <small id="progressGoalNote">Updated from your routine data</small>
+                </article>
+                <article class="dash-stat-card">
+                    <span class="dash-icon">SC</span>
+                    <p>Booster score</p>
+                    <strong id="progressScoreValue">0%</strong>
+                    <small id="progressScoreNote">Momentum for this week</small>
+                </article>
+                <article class="dash-stat-card">
+                    <span class="dash-icon">ST</span>
+                    <p>Steps target</p>
+                    <strong id="progressStepsValue">0</strong>
+                    <small id="progressStepsNote">Daily movement trend</small>
+                </article>
+            </section>
+
+            <section class="progress-page-grid reveal">
+                <article class="dash-panel progress-trends-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Weekly trends</p>
+                            <h2>Your category progress</h2>
+                        </div>
+                        <span class="status-pill">User only</span>
+                    </div>
+                    <div class="progress-bars progress-bars-large" id="progressPageBars"></div>
+                </article>
+
+                <article class="dash-panel progress-coach-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Coach feedback</p>
+                            <h2>Send feedback to your coach</h2>
+                        </div>
+                    </div>
+                    <form id="coachFeedbackForm" class="feedback-form">
+                        <p class="form-message" id="coachFeedbackMessage" aria-live="polite"></p>
+                        <label for="coachFeedbackRating">How was this week?</label>
+                        <select id="coachFeedbackRating" name="rating" required>
+                            <option value="">Select rating</option>
+                            <option>Excellent</option>
+                            <option>Good</option>
+                            <option>Average</option>
+                            <option>Needs support</option>
+                        </select>
+
+                        <label for="coachFeedbackText">Message to your coach</label>
+                        <textarea id="coachFeedbackText" name="feedback" rows="6" placeholder="Tell your coach what improved, what felt difficult, and what you want changed next week." required></textarea>
+
+                        <button type="submit" class="btn btn-primary" id="coachFeedbackButton">Send feedback</button>
+                    </form>
+                </article>
+            </section>
+
+            <section class="progress-page-grid reveal">
+                <article class="dash-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Recent activity</p>
+                            <h2>Your latest wins</h2>
+                        </div>
+                    </div>
+                    <div class="activity-feed" id="progressActivityFeed"></div>
+                </article>
+
+                <article class="dash-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Milestones</p>
+                            <h2>Badges you unlocked</h2>
+                        </div>
+                    </div>
+                    <div class="badge-grid" id="progressBadgeGrid"></div>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <div class="toast" id="dashboardToast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

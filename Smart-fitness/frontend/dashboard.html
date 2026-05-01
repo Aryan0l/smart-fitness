@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Smart Tracker Booster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+    <header class="dashboard-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand"><span class="brand-mark">ST</span><span>SmartTracker</span></a>
+            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <button class="login-link logout-button" type="button" id="logoutButton">Logout</button>
+                <a href="signup.html" class="btn btn-light">Get Started</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-page">
+        <section class="dashboard-hero reveal">
+            <div>
+                <p class="eyebrow">Smart dashboard</p>
+                <h1>Welcome back, <span id="dashboardUserName">Ankit</span></h1>
+                <p id="dashboardIntro">Everything about your fitness journey is visible here: score, workout, nutrition, schedule, recovery, and achievements.</p>
+                <div class="hero-actions dashboard-hero-actions">
+                    <button type="button" class="btn btn-primary" id="openPlannerButton">Customize Plan</button>
+                </div>
+            </div>
+            <div class="hero-visual-stack">
+                <div class="dashboard-date-card">
+                    <span>Today</span>
+                    <strong id="goalCompleted">86%</strong>
+                    <small>Goal completed</small>
+                </div>
+                <div class="hero-image-card">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Workout training session">
+                    <div class="hero-image-overlay">
+                        <span>Live Focus</span>
+                        <strong>Strong body, sharper routine</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-banner reveal">
+            <div class="banner-copy">
+                <p class="eyebrow">Momentum zone</p>
+                <h2>Your system is now tuned around your day</h2>
+                <p>Personalized timing, hydration rhythm, training focus, and nutrition cues are all lined up in one place so you can move without confusion.</p>
+            </div>
+            <div class="banner-gallery">
+                <div class="gallery-card tall">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=700&q=80" alt="Woman doing fitness training">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80" alt="Healthy nutrition meal">
+                </div>
+                <div class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=700&q=80" alt="Fitness lifestyle and stretching">
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-stat-grid reveal">
+            <article class="dash-stat-card">
+                <span class="dash-icon">ST</span>
+                <p>Booster Score</p>
+                <strong id="boosterScore">86%</strong>
+                <small id="boosterTrend">+12% from last week</small>
+            </article>
+            <article class="dash-stat-card">
+                <span class="dash-icon">24</span>
+                <p>Day Streak</p>
+                <strong id="streakCount">24</strong>
+                <small id="streakNote">Keep it going today</small>
+            </article>
+            <article class="dash-stat-card">
+                <span class="dash-icon">12k</span>
+                <p>Steps</p>
+                <strong id="stepsCount">12,480</strong>
+                <small id="stepsNote">2,520 left for target</small>
+            </article>
+            <article class="dash-stat-card">
+                <span class="dash-icon">640</span>
+                <p>Calories</p>
+                <strong id="caloriesCount">640</strong>
+                <small id="caloriesNote">Burned today</small>
+            </article>
+        </section>
+
+        <section class="dashboard-creative-grid reveal">
+            <article class="dash-panel readiness-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Readiness lab</p>
+                        <h2>How are you feeling today?</h2>
+                    </div>
+                    <span class="status-pill purple" id="readinessScore">78% ready</span>
+                </div>
+                <div class="slider-stack">
+                    <label for="energyRange">Energy</label>
+                    <input type="range" id="energyRange" min="1" max="10" value="7">
+                    <label for="focusRange">Focus</label>
+                    <input type="range" id="focusRange" min="1" max="10" value="8">
+                    <label for="recoveryRange">Recovery</label>
+                    <input type="range" id="recoveryRange" min="1" max="10" value="6">
+                </div>
+                <p class="dash-note" id="readinessNote">You are in a strong zone for a focused workout today.</p>
+            </article>
+
+            <article class="dash-panel coach-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Coach pulse</p>
+                        <h2>AI coaching note</h2>
+                    </div>
+                    <span class="coach-avatar">AI</span>
+                </div>
+                <p class="coach-message" id="coachMessage">Your current plan is balanced well. Start with your warm-up, then push intensity in the middle block.</p>
+                <div class="coach-tags">
+                    <span id="coachTagOne">Smart pacing</span>
+                    <span id="coachTagTwo">Hydration check</span>
+                    <span id="coachTagThree">Recovery first</span>
+                </div>
+            </article>
+
+            <article class="dash-panel hydration-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Hydration orbit</p>
+                        <h2>Water tracker</h2>
+                    </div>
+                    <span class="status-pill" id="hydrationStatus">0 / 8 glasses</span>
+                </div>
+                <div class="water-grid" id="waterGrid">
+                    <button type="button" class="water-drop" data-water="1">1</button>
+                    <button type="button" class="water-drop" data-water="2">2</button>
+                    <button type="button" class="water-drop" data-water="3">3</button>
+                    <button type="button" class="water-drop" data-water="4">4</button>
+                    <button type="button" class="water-drop" data-water="5">5</button>
+                    <button type="button" class="water-drop" data-water="6">6</button>
+                    <button type="button" class="water-drop" data-water="7">7</button>
+                    <button type="button" class="water-drop" data-water="8">8</button>
+                </div>
+                <p class="dash-note" id="hydrationNote">Tap each drop as you finish a glass.</p>
+            </article>
+
+            <article class="dash-panel mission-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Daily mission</p>
+                        <h2 id="missionTitle">Finish 3 focused sets without long breaks</h2>
+                    </div>
+                    <span class="status-pill" id="missionReward">+15 XP</span>
+                </div>
+                <p class="coach-message" id="missionDescription">Complete this mini challenge to sharpen consistency and unlock a momentum badge today.</p>
+                <div class="mission-actions">
+                    <button type="button" class="btn btn-primary" id="newMissionButton">New Mission</button>
+                    <button type="button" class="btn secondary-action" id="completeMissionButton">Claim Reward</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="dashboard-lab-grid reveal">
+            <article class="dash-panel focus-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Focus mode</p>
+                        <h2>Workout countdown</h2>
+                    </div>
+                    <span class="status-pill purple" id="focusStatus">Ready</span>
+                </div>
+                <div class="focus-orb">
+                    <span id="focusTimer">05:00</span>
+                    <small>deep work block</small>
+                </div>
+                <div class="mission-actions">
+                    <button type="button" class="btn btn-primary" id="startFocusButton">Start Focus</button>
+                    <button type="button" class="btn secondary-action" id="resetFocusButton">Reset</button>
+                </div>
+            </article>
+
+            <article class="dash-panel battery-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Body battery</p>
+                        <h2>Recovery energy</h2>
+                    </div>
+                    <span class="status-pill" id="batteryStatus">Balanced</span>
+                </div>
+                <div class="battery-meter">
+                    <div class="battery-fill" id="batteryFill"></div>
+                    <span id="batteryValue">76%</span>
+                </div>
+                <p class="dash-note" id="batteryNote">Your body is ready for a controlled workout.</p>
+            </article>
+
+            <article class="dash-panel streak-map-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Streak map</p>
+                        <h2>Weekly consistency</h2>
+                    </div>
+                    <span class="status-pill" id="streakMapStatus">5 / 7 active</span>
+                </div>
+                <div class="streak-map" id="streakMap">
+                    <button type="button" class="active">M</button>
+                    <button type="button" class="active">T</button>
+                    <button type="button" class="active">W</button>
+                    <button type="button">T</button>
+                    <button type="button" class="active">F</button>
+                    <button type="button">S</button>
+                    <button type="button" class="active">S</button>
+                </div>
+                <p class="dash-note">Tap days to mark your active routine.</p>
+            </article>
+
+            <article class="dash-panel mood-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Mood check</p>
+                        <h2>Pick today's vibe</h2>
+                    </div>
+                    <span class="status-pill purple" id="moodStatus">Strong</span>
+                </div>
+                <div class="mood-grid" id="moodGrid">
+                    <button type="button" data-mood="Calm">Calm</button>
+                    <button type="button" data-mood="Strong" class="selected">Strong</button>
+                    <button type="button" data-mood="Tired">Tired</button>
+                    <button type="button" data-mood="Focused">Focused</button>
+                </div>
+                <p class="coach-message" id="moodCoach">Strong mood selected. Keep intensity high but controlled.</p>
+            </article>
+        </section>
+
+        <section class="dashboard-layout">
+            <aside class="dash-panel quick-panel reveal">
+                <h2>Quick actions</h2>
+                <button type="button" data-dashboard-action="start-workout">Start workout</button>
+                <button type="button" data-dashboard-action="log-meal">Log meal</button>
+                <button type="button" data-dashboard-action="view-schedule">View schedule</button>
+                <button type="button" data-dashboard-action="check-progress">Check progress</button>
+                <a href="progress.html" id="progressPageLink">Open progress page</a>
+                <a href="index.html">Back to website</a>
+            </aside>
+
+            <div class="dashboard-main-grid">
+                <article class="dash-panel progress-panel reveal" id="progress">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Weekly progress</p>
+                            <h2>Your activity graph</h2>
+                        </div>
+                        <span class="status-pill">On track</span>
+                    </div>
+                    <div class="progress-bars" id="progressBars">
+                        <div><span>Steps</span><strong>82%</strong><i style="--fill: 82%"></i></div>
+                        <div><span>Workout</span><strong>68%</strong><i style="--fill: 68%"></i></div>
+                        <div><span>Nutrition</span><strong>74%</strong><i style="--fill: 74%"></i></div>
+                        <div><span>Sleep</span><strong>91%</strong><i style="--fill: 91%"></i></div>
+                    </div>
+                </article>
+
+                <article class="dash-panel workout-panel reveal" id="workout">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Today's workout</p>
+                            <h2 id="workoutTitle">Upper body strength</h2>
+                        </div>
+                        <span class="status-pill purple" id="workoutTimer">38 min</span>
+                    </div>
+                    <div class="panel-media">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80" alt="Strength workout equipment">
+                    </div>
+                    <div class="task-list" id="workoutList">
+                        <div><strong>Warm-up mobility</strong><span>8 min</span></div>
+                        <div><strong>Push-ups and rows</strong><span>4 sets</span></div>
+                        <div><strong>Shoulder press</strong><span>3 sets</span></div>
+                        <div><strong>Cool-down stretch</strong><span>6 min</span></div>
+                    </div>
+                    <div class="workout-actions">
+                        <button type="button" class="btn btn-primary" data-dashboard-action="start-workout">Start Now</button>
+                        <button type="button" class="btn secondary-action" id="completeWorkoutButton">Mark Complete</button>
+                    </div>
+                </article>
+
+                <article class="dash-panel nutrition-panel reveal" id="nutrition">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Nutrition</p>
+                            <h2>Meal target</h2>
+                        </div>
+                        <span class="status-pill" id="nutritionCalories">1,850 kcal</span>
+                    </div>
+                    <div class="nutrition-visual">
+                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1000&q=80" alt="Healthy meal preparation">
+                    </div>
+                    <div class="macro-grid" id="macroGrid">
+                        <div><strong>120g</strong><span>Protein</span></div>
+                        <div><strong>210g</strong><span>Carbs</span></div>
+                        <div><strong>55g</strong><span>Fats</span></div>
+                    </div>
+                    <p class="dash-note" id="nutritionNote">Next suggestion: add a high-protein snack after workout.</p>
+                </article>
+
+                <article class="dash-panel chatbot-panel reveal" id="assistantChatPanel">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">AI Assistant</p>
+                            <h2>Fitness Chatbot</h2>
+                        </div>
+                        <span class="status-pill purple" id="chatbotStatus">Live help</span>
+                    </div>
+                    <p class="dash-note" id="chatbotIntro">Ask about workouts, meals, sleep, or motivation and get instant responses.</p>
+
+                    <div class="chatbot-shell">
+                        <div class="chatbot-header">
+                            <div class="chatbot-terminal-buttons">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <div id="chatbot-thread" class="chatbot-thread">
+                            <div class="chatbot-message assistant">
+                                <span class="chatbot-author">Chatbot</span>
+                                <p>Hello! I'm your Fitness Bot. Ask me about workouts, meals, or sleep!</p>
+                            </div>
+                        </div>
+
+                        <div id="typing-indicator" class="typing-indicator hidden">
+                            <div class="typing-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <span>Bot is typing...</span>
+                        </div>
+
+                        <form class="chatbot-form" onsubmit="event.preventDefault(); handleChatbotInput(document.querySelector('#chatbotInput').value);">
+                            <input type="text" id="chatbotInput" placeholder="Ask about workouts, meals, sleep..." maxlength="220" aria-label="Chat with Fitness Bot">
+                            <button type="button" class="btn btn-primary" id="chatbotSubmitButton">Send</button>
+                        </form>
+                    </div>
+
+                    <div class="chatbot-options">
+                        <p class="chatbot-options-label">Choose a quick topic</p>
+                        <div class="chatbot-quick-actions" id="chatbotQuickActions">
+                            <button type="button" data-chat-option="workout" data-chat-prompt="Give me a workout plan">Workout plan</button>
+                            <button type="button" data-chat-option="breakfast" data-chat-prompt="Give me breakfast ideas">Breakfast ideas</button>
+                            <button type="button" data-chat-option="sleep" data-chat-prompt="Give me sleep tips">Sleep tips</button>
+                            <button type="button" data-chat-option="motivation" data-chat-prompt="Motivate me">Motivation</button>
+                            <button type="button" data-chat-option="progress" data-chat-prompt="How do I track progress?">Track progress</button>
+                            <button type="button" data-chat-option="hydration" data-chat-prompt="How much water should I drink?">Hydration</button>
+                            <button type="button" data-chat-option="mealprep" data-chat-prompt="Give me meal prep ideas">Meal prep</button>
+                            <button type="button" data-chat-option="recovery" data-chat-prompt="How do I recover after workouts?">Recovery</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="dash-panel schedule-panel reveal" id="schedule">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Schedule</p>
+                            <h2>Today's plan</h2>
+                        </div>
+                    </div>
+                    <div class="timeline" id="scheduleList">
+                        <div><time>07:00</time><span>Morning walk</span></div>
+                        <div><time>13:30</time><span>Hydration reminder</span></div>
+                        <div><time>18:00</time><span>Strength workout</span></div>
+                        <div><time>22:30</time><span>Sleep wind-down</span></div>
+                    </div>
+                </article>
+
+                <article class="dash-panel achievement-panel reveal">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Achievements</p>
+                            <h2>Unlocked badges</h2>
+                        </div>
+                    </div>
+                    <div class="badge-grid" id="achievementList">
+                        <span>24 day streak</span>
+                        <span>10k steps</span>
+                        <span>Hydration hero</span>
+                        <span>Weekly warrior</span>
+                    </div>
+                </article>
+
+                <article class="dash-panel activity-panel reveal">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Activity feed</p>
+                            <h2>Recent updates</h2>
+                        </div>
+                    </div>
+                    <div class="activity-feed" id="activityFeed">
+                        <p><strong>Completed</strong> 12,480 steps today.</p>
+                        <p><strong>Logged</strong> breakfast with 32g protein.</p>
+                        <p><strong>Improved</strong> weekly sleep score by 9%.</p>
+                    </div>
+                </article>
+
+                <article class="dash-panel mongo-panel reveal">
+                    <div class="panel-heading">
+                        <div>
+                            <p class="eyebrow">Neon saved data</p>
+                            <h2>Dashboard event table</h2>
+                        </div>
+                        <span class="status-pill purple">Live DB</span>
+                    </div>
+                    <div class="mongo-table" id="mongoEventTable">
+                        <div><strong>Action</strong><strong>Data</strong></div>
+                        <div><span>No saved events yet</span><span>Use dashboard buttons</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="dashboardToast" role="status" aria-live="polite"></div>
+
+    <div class="modal-backdrop" id="mealModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="mealModalTitle">
+            <button type="button" class="modal-close" id="closeMealModal" aria-label="Close meal form">x</button>
+            <p class="eyebrow">Nutrition log</p>
+            <h2 id="mealModalTitle">Add your meal</h2>
+            <form id="mealForm">
+                <label for="mealName">Meal name</label>
+                <input type="text" id="mealName" name="mealName" placeholder="Paneer sandwich" required>
+
+                <label for="mealCalories">Calories</label>
+                <input type="number" id="mealCalories" name="calories" min="1" placeholder="420" required>
+
+                <label for="mealProtein">Protein grams</label>
+                <input type="number" id="mealProtein" name="protein" min="0" placeholder="28">
+
+                <button type="submit" class="btn btn-primary">Save Meal</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="plannerModal" aria-hidden="true">
+        <div class="modal-card planner-card" role="dialog" aria-modal="true" aria-labelledby="plannerModalTitle">
+            <button type="button" class="modal-close" id="closePlannerModal" aria-label="Close planner form">x</button>
+            <p class="eyebrow">Personalize dashboard</p>
+            <h2 id="plannerModalTitle">Create your plan from your inputs</h2>
+            <form id="plannerForm">
+                <div class="planner-grid">
+                    <div>
+                        <label for="plannerGoal">Goal</label>
+                        <select id="plannerGoal" name="goal" required>
+                            <option>Lose weight</option>
+                            <option>Build muscle</option>
+                            <option>Improve stamina</option>
+                            <option>Stay active</option>
+                            <option>Improve flexibility</option>
+                            <option>Boost endurance</option>
+                            <option>Body recomposition</option>
+                            <option>Train for an event</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="plannerWorkout">Workout type</label>
+                        <select id="plannerWorkout" name="preferredWorkout" required>
+                            <option>Strength</option>
+                            <option>Cardio</option>
+                            <option>Yoga</option>
+                            <option>HIIT</option>
+                            <option>Pilates</option>
+                            <option>Mobility</option>
+                            <option>Bodyweight</option>
+                            <option>Cross training</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="plannerExperience">Experience</label>
+                        <select id="plannerExperience" name="experienceLevel" required>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                            <option>Returning after break</option>
+                            <option>Athlete level</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="plannerMealPreference">Meal preference</label>
+                        <select id="plannerMealPreference" name="mealPreference" required>
+                            <option>Balanced</option>
+                            <option>High Protein</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                            <option>Low Carb</option>
+                            <option>Mediterranean</option>
+                            <option>Gluten Free</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="plannerWakeTime">Wake time</label>
+                        <input type="time" id="plannerWakeTime" name="wakeTime" required>
+                    </div>
+                    <div>
+                        <label for="plannerWorkoutTime">Workout time</label>
+                        <input type="time" id="plannerWorkoutTime" name="workoutTime" required>
+                    </div>
+                    <div>
+                        <label for="plannerSleepTime">Sleep time</label>
+                        <input type="time" id="plannerSleepTime" name="sleepTime" required>
+                    </div>
+                    <div>
+                        <label for="plannerMinutes">Available minutes</label>
+                        <input type="number" id="plannerMinutes" name="availableMinutes" min="15" max="120" required>
+                    </div>
+                    <div>
+                        <label for="plannerDays">Workout days per week</label>
+                        <input type="number" id="plannerDays" name="workoutDays" min="1" max="7" required>
+                    </div>
+                    <div>
+                        <label for="plannerHydration">Hydration goal (L)</label>
+                        <input type="number" id="plannerHydration" name="hydrationGoal" min="1" max="6" required>
+                    </div>
+                </div>
+                <div class="ai-assistance-panel" id="aiAssistanceSection">
+                    <p class="eyebrow">AI Insight</p>
+                    <h3>Your personalized plan</h3>
+                    <p class="ai-assistance-copy" id="aiAssistanceCopy">Enter your daily plan inputs above and the AI assistant will return a tailored workout, nutrition, and timing recommendation here.</p>
+                    <div id="aiRecommendations" class="ai-recommendations"></div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save My Plan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Smart Tracker Booster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-shell signup-page">
+    <header class="page-header login-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand"><span class="brand-mark">ST</span><span>SmartTracker</span></a>
+            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="login-link">Login</a>
+                <a href="signup.html" class="btn btn-light">Sign Up</a>
+            </div>
+        </nav>
+
+        <section class="auth-wrap">
+            <div class="auth-shell signup-shell reveal">
+                <aside class="auth-side">
+                    <p class="eyebrow">Start today</p>
+                    <h1>Create your smart fitness account</h1>
+                    <p>Set your goal, choose your plan, and let Smart Tracker Booster build your daily routine.</p>
+                    <div class="auth-visual">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80" alt="Healthy meal planning">
+                    </div>
+                    <div class="auth-metric">
+                        <strong>7 days</strong>
+                        <span>to build your first activity streak</span>
+                    </div>
+                </aside>
+
+                <form action="dashboard.html" method="get" class="auth-card" id="signupForm">
+                    <div class="auth-card-head">
+                        <p class="eyebrow" id="signupRoleEyebrow">New user</p>
+                        <h2>Sign up</h2>
+                        <p id="signupRoleCopy">Create a free demo account to preview your dashboard.</p>
+                    </div>
+                    <p class="form-message" id="signupMessage" aria-live="polite"></p>
+                    <input type="hidden" id="signupRole" name="role" value="user">
+
+                    <div class="form-grid">
+                        <div>
+                            <label for="fullName">Full name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your name" required>
+                        </div>
+                        <div id="goalFieldWrapper">
+                            <label for="goal">Fitness goal</label>
+                            <select id="goal" name="goal" required>
+                                <option value="">Select goal</option>
+                                <option>Lose weight</option>
+                                <option>Build muscle</option>
+                                <option>Improve stamina</option>
+                                <option>Stay active</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <label for="email">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+
+                    <label for="newPassword">Create password</label>
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Minimum 6 characters" minlength="6" required>
+
+                    <label for="confirmPassword">Confirm password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password" minlength="6" required>
+
+                    <label class="check-control terms">
+                        <input type="checkbox" name="terms" required>
+                        <span>I agree to receive fitness tips and account updates.</span>
+                    </label>
+
+                    <button type="submit" class="btn btn-primary" id="signupSubmitButton" disabled>Create Account</button>
+                    <p class="auth-switch">Already have an account? <a href="login.html">Login here</a></p>
+                </form>
+            </div>
+        </section>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Smart Tracker Booster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-shell contact-page">
+    <header class="page-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand"><span class="brand-mark">ST</span><span>SmartTracker</span></a>
+            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="login-link">Login</a>
+                <a href="signup.html" class="btn btn-light">Get Started</a>
+            </div>
+        </nav>
+        <div class="page-hero reveal">
+            <p class="eyebrow">Need assistance?</p>
+            <h1>Contact our support team</h1>
+            <p>Reach out anytime for help with your account, training plan, or progress tracking.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section contact-section">
+            <div class="contact-grid">
+                <div class="contact-copy reveal">
+                    <p class="eyebrow">We’re here to help</p>
+                    <h2>Send us a message and we’ll get back to you soon</h2>
+                    <p>Whether you need advice, account support, or training assistance, our team is ready to help you stay on track.</p>
+                    <div class="contact-info">
+                        <p><strong>Email</strong><br>support@smarttracker.com</p>
+                        <p><strong>Phone</strong><br>9293498923</p>
+                        <p><strong>Hours</strong><br>Mon–Fri, 9am–7pm</p>
+                    </div>
+                </div>
+                <form class="auth-card feedback-form reveal" action="mailto:support@smarttracker.com" method="post" enctype="text/plain">
+                    <div class="auth-card-head">
+                        <p class="eyebrow">Contact form</p>
+                        <h2>Message our team</h2>
+                        <p>Share your question and we’ll follow up with a helpful response.</p>
+                    </div>
+                    <label for="contactName">Name</label>
+                    <input type="text" id="contactName" name="Name" placeholder="Your full name" required>
+
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="Email" placeholder="name@example.com" required>
+
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" id="contactSubject" name="Subject" placeholder="How can we help?" required>
+
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" name="Message" rows="6" placeholder="Tell us more about your request" required></textarea>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <h3>SmartTracker</h3>
+            <p>Your AI-powered fitness companion for stronger habits and healthier days.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div>
+            <h3>Resources</h3>
+            <a href="features.html">Exercise Library</a>
+            <a href="features.html">Nutrition Guide</a>
+            <a href="about.html">Help Center</a>
+        </div>
+        <div>
+            <h3>Contact Us</h3>
+            <p>Email: support@smarttracker.com</p>
+            <p>Phone: 9293498923</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

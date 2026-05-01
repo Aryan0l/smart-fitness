@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Smart Tracker Booster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-shell login-page">
+    <header class="page-header login-header">
+        <nav class="navbar">
+            <a href="index.html" class="brand"><span class="brand-mark">ST</span><span>SmartTracker</span></a>
+            <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="features.html">Features</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-actions">
+                <a href="login.html" class="login-link active-login">Login</a>
+                <a href="signup.html" class="btn btn-light">Sign Up</a>
+            </div>
+        </nav>
+        <section class="auth-wrap">
+            <div class="auth-shell reveal">
+                <aside class="auth-side">
+                    <p class="eyebrow">Welcome back</p>
+                    <h1>Continue your fitness streak</h1>
+                    <p>Login to check your booster score, daily plan, smart reminders, and weekly progress report.</p>
+                    <div class="auth-visual">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Fitness coaching session">
+                    </div>
+                    <div class="auth-benefits">
+                        <span>Personalized dashboard</span>
+                        <span>Workout and nutrition history</span>
+                        <span>AI recommendations ready for today</span>
+                    </div>
+                </aside>
+
+                <form action="dashboard.html" method="get" class="auth-card" id="loginForm">
+                    <div class="auth-card-head">
+                        <p class="eyebrow" id="loginRoleEyebrow">User login</p>
+                        <h2 id="loginRoleTitle">Login to your tracker</h2>
+                        <p id="loginRoleCopy">Use your user account details to continue.</p>
+                    </div>
+                    <div class="auth-mini-status">
+                        <span>Secure access</span>
+                        <span>MongoDB connected</span>
+                    </div>
+                    <p class="form-message" id="loginMessage" aria-live="polite"></p>
+                    <input type="hidden" id="loginRole" name="role" value="user">
+
+                    <label for="username">Email or username</label>
+                    <input type="text" id="username" name="username" placeholder="name@example.com" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Minimum 6 characters" minlength="6" required>
+
+                    <div class="form-row">
+                        <label class="check-control">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="signup.html">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="loginSubmitButton">Login</button>
+                    <p class="auth-switch">New here? <a href="signup.html">Create your account</a></p>
+                </form>
+            </div>
+        </section>
+    </header>
+
+    <script src="script.js"></script>
+</body>
+</html>
