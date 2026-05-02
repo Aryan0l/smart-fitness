@@ -2501,7 +2501,12 @@ input[type="range"] {
 .mongo-table span {
     color: #334155;
     font-weight: 800;
-    overflow-wrap: anywhere;
+    line-height: 1.45;
+    overflow-wrap: break-word;
+}
+
+.mongo-table span:last-child {
+    font-weight: 700;
 }
 
 .panel-media,
@@ -3015,6 +3020,24 @@ input[type="range"] {
         grid-template-columns: 1fr;
     }
 
+    .mongo-table div {
+        align-items: flex-start;
+        grid-template-columns: 1fr;
+    }
+
+    .mongo-table div:first-child {
+        display: none;
+    }
+
+    .mongo-table span:first-child {
+        color: #101827;
+        font-size: 0.95rem;
+    }
+
+    .mongo-table span:last-child {
+        color: #536176;
+        font-size: 0.92rem;
+    }
     .nav-actions {
         top: 286px;
     }

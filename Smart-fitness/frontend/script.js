@@ -620,6 +620,50 @@ function applyDashboardRoleView(data) {
     updateText("#goalCompleted", "Coach");
 }
 
+function formatEventPayload(event) {
+    const payload = event.payload || {};
+    const details = [];
+
+    if (payload.goal) {
+        details.push(`Goal: ${payload.goal}`);
+    }
+
+    const preferences = payload.preferences || payload;
+    if (preferences.preferredWorkout) {
+        details.push(`Workout: ${preferences.preferredWorkout}`);
+    }
+    if (preferences.workoutDays) {
+        details.push(`${preferences.workoutDays} days/week`);
+    }
+    if (preferences.availableMinutes) {
+        details.push(`${preferences.availableMinutes} min/session`);
+    }
+    if (preferences.hydrationGoal) {
+        details.push(`${preferences.hydrationGoal}L water`);
+    }
+    if (payload.mealName) {
+        details.push(`Meal: ${payload.mealName}`);
+    }
+    if (payload.calories) {
+        details.push(`${payload.calories} kcal`);
+    }
+    if (payload.rating) {
+        details.push(`Rating: ${payload.rating}`);
+    }
+    if (payload.feedback) {
+        details.push(`Feedback: ${payload.feedback}`);
+    }
+    if (payload.question) {
+        details.push(`Asked: ${payload.question}`);
+    }
+
+    if (details.length) {
+        return details.slice(0, 5).join(" · ");
+    }
+
+    return event.createdAt ? `Saved ${new Date(event.createdAt).toLocaleString()}` : "Saved";
+}
+
 function renderMongoEventTable(events) {
     const table = document.querySelector("#mongoEventTable");
     if (!table) {
@@ -629,10 +673,7 @@ function renderMongoEventTable(events) {
     const rows = events.length
         ? events
               .slice(0, 6)
-              .map((event) => {
-                  const payload = event.payload ? JSON.stringify(event.payload) : "Saved";
-                  return `<div><span>${escapeHtml(event.label)}</span><span>${escapeHtml(payload)}</span></div>`;
-              })
+              .map((event) => `<div><span>${escapeHtml(event.label)}</span><span>${escapeHtml(formatEventPayload(event))}</span></div>`)
               .join("")
         : "<div><span>No saved events yet</span><span>Use dashboard buttons</span></div>";
 
@@ -694,8 +735,7 @@ function prependMongoEvent(event) {
         return;
     }
 
-    const payload = event.payload ? JSON.stringify(event.payload) : "Saved";
-    const row = `<div><span>${escapeHtml(event.label)}</span><span>${escapeHtml(payload)}</span></div>`;
+    const row = `<div><span>${escapeHtml(event.label)}</span><span>${escapeHtml(formatEventPayload(event))}</span></div>`;
     const header = "<div><strong>Action</strong><strong>Data</strong></div>";
     const existingRows = [...table.querySelectorAll("div")]
         .slice(1)
