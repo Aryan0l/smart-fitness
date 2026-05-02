@@ -239,14 +239,14 @@ if (signupForm) {
         }
 
         const emailValid = isValidSignupEmail(signupEmail.value.trim());
-        const passwordValid = signupPassword.value.length >= 6;
+        const passwordValid = signupPassword.value.length >= 8;
         const passwordsMatch = signupPassword.value && signupPassword.value === signupConfirmPassword.value;
         signupSubmitButton.disabled = !(emailValid && passwordValid && passwordsMatch);
 
         if (!emailValid && signupEmail.value.length) {
             setMessage(signupMessage, "Please enter a valid Gmail address (@gmail.com).", "error");
-        } else if (signupPassword.value && signupPassword.value.length < 6) {
-            setMessage(signupMessage, "Password must be at least 6 characters.", "error");
+        } else if (signupPassword.value && signupPassword.value.length < 8) {
+            setMessage(signupMessage, "Password must be at least 8 characters.", "error");
         } else if (signupPassword.value && signupConfirmPassword.value && !passwordsMatch) {
             setMessage(signupMessage, "Passwords do not match.", "error");
         } else {
@@ -267,8 +267,8 @@ if (signupForm) {
             return;
         }
 
-        if (signupPassword.value.length < 6) {
-            setMessage(signupMessage, "Password must be at least 6 characters.", "error");
+        if (signupPassword.value.length < 8) {
+            setMessage(signupMessage, "Password must be at least 8 characters.", "error");
             return;
         }
 
